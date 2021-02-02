@@ -4,9 +4,18 @@
 
 {%block content%}
 <body>
- <h1>Survey: Survey.title</h1>
- <p>Survey Intructions</p>
-<button>Start Survey</button>
+ <div class="personality">
+     <h1>{{personality_Title}}</h1>
+     <h3>{{personality_Intructions}}</h3>
+     <br />
+     <a href="/personality/questions/0"><button>Start!</button></a>
+ </div>
+ <HR />
+ <div class="satisfaction">
+     <h1>{{satisfaction_Title}}</h1>
+     <h3>{{satisfaction_Instructions}}</h3>
+    <br />
+    <a href="/satisfaction/questions/0"><button>Start!</button></a></div>
 </body>
 
 {%endblock%}
