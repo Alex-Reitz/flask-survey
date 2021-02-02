@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 from flask_debugtoolbar import DebugToolbarExtension
-from surveys import Question, Survey
+from surveys import surveys
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "oh-so-secret"
@@ -13,10 +13,8 @@ responses = []
 def home_page():
     return render_template("home.html")
 
-@app.route('/user/<survey>')
+@app.route('/personality')
 def show_survey(survey):
-    print(surveys)
-    name = surveys
-    survey = surveys[name]
-    return f"{{survey}}"
+    personality = surveys.personality_quiz
+    return render_template("personality.html", personality=personality)
     
