@@ -1,21 +1,13 @@
-{%extends "base.html"%} 
+{%extends "base.html" %}
 
-{%block title%}  Survey  {%endblock%} 
+{% block content %}
 
-{%block content%}
-<body>
- <div class="personality">
-     <h1>{{personality_Title}}</h1>
-     <h3>{{personality_Intructions}}</h3>
-     <br />
-     <a href="/personality/questions/0"><button>Start!</button></a>
- </div>
- <HR />
- <div class="satisfaction">
-     <h1>{{satisfaction_Title}}</h1>
-     <h3>{{satisfaction_Instructions}}</h3>
-    <br />
-    <a href="/satisfaction/questions/0"><button>Start!</button></a></div>
-</body>
+<h1>{{survey.title}}</h1>
+
+<p>{{survey.instructions}}</p>
+
+<form action="/begin" method="POST">
+    <button>Start</button>
+</form>
 
 {%endblock%}
